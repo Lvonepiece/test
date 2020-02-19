@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <p v-html="contenthtml"></p>
+        <p v-text="content"></p>
+        <p v-text="name"></p>
+    </div>
+</body>
+<script src="vue.js"></script>
+<script>
+    var xm = new Vue({
+        el: '#app',
+        data: {
+            content: "肖战是谁",
+            contenthtml: `<span style="color:red">最近很火的人</span>`,
+            name: "人生最大的奢侈是上班"
+        }
+    })
+</script>
+
+</html>

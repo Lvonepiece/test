@@ -1,3 +1,61 @@
-<html>
-123
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+
+
+        <p>名字：{{name}}</p>
+        <p>身高:{{height}}</p>
+        <p>{{message}}</p>
+        <p>{{money}}</p>
+        <p>{{list}}</p>
+    </div>
+</body>
+<script src="vue.js"></script>
+<!-- 1. body中,设置Vue管理的视图<div id="app"></div>
+2. 引入vue.js
+3. 实例化Vue对象 new Vue();
+    
+4. 设置Vue实例的选项:如el、data...     
+   new Vue({选项:值});
+5. 在视图中通过{{ }}使用data中的数据 -->
+<script>
+    var xm = new Vue({
+        el: '#app', //指的是管理视图的选择器
+        data: { //数据
+            name: 'holle,world',
+            height: '200cm',
+            message: "天生我才必有用",
+            money: '13000',
+            list: '["盖茨","巴菲特","贝索斯"]',
+            alipay: '支付宝',
+            wechat: '腾讯'
+        }, //将数据对象中message初始值设置为 天生我才必有用,   money为  13000, list为 数组 ["盖茨","巴菲特","贝索斯"]
+        methods: {
+            gitname() {
+                alert("辟谷第二天，加油")
+            },
+            gitname1() {
+                this.gitname()
+            },
+            fn1() {
+                console.log(this.alipay);
+
+            },
+            fn2() {
+
+                console.log(this.wechat);
+
+            }
+        }
+    })
+</script>
+
 </html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="app">
+        <p>{{'你知道前端的水有多深吗'}}</p>
+        <p>{{reverselist()}}</p>
+        <p>{{ list.join("").split("").reverse().join("") }}</p>
+        <p v-text="name"></p>
+    </div>
+</body>
+<script src="vue.js"></script>
+<script>
+    var xm = new Vue({
+        el: ".app",
+        data: {
+            name: "吕金函",
+            msg: "我要成为前端程序员",
+            showMessage: 'false',
+            list: [1, 3, 2]
+        },
+        methods: {
+            reverselist() {
+                let list2 = [...this.list]
+                return list2.reverse().join("")
+            }
+        }
+    })
+</script>
+
+</html>
