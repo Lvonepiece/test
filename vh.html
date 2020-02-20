@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    .box1 {
+        background-color: skyblue;
+        width: 100%;
+        height: 100vh;
+    }
+    
+    .box2 {
+        background-color: black;
+        width: 100%;
+        height: 100vh;
+    }
+</style>
+
+<body>
+    <div id="app">
+        <button @click="fn()">开关灯</button>
+        <!-- <button @click="fn"></button> -->
+        <!-- <div class="box1" v-if="light"></div> -->
+        <!-- <div class="box2" v-if="!light"></div>
+         -->
+        <div class="box1" v-show="light"></div>
+        <div class="box2" v-show="!light"></div>
+    </div>
+    <script src="./vue.js"></script>
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                light: true
+            },
+            methods: {
+                fn() {
+                    vm.light = !vm.light
+                }
+            }
+        });
+    </script>
+</body>
+<!-- 1. 定义一个Vue实例
+2. 定义一个布尔型变量showMessage : false  
+3. 分别使用v-if 和 v-show来 做一个开关灯的效果 -->
+
+</html>
