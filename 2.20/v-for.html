@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <ul>
+            <li v-for="(item,index) in name">
+                <span>测试一下v-for好使不</span> dia {{index+1}} sdadas {{item}}
+            </li>
+        </ul>
+        <ul>
+            <li v-for="adc in list">
+                {{adc}}
+            </li>s
+        </ul>
+        <div v-for="(abc,bbb) in person">
+            {{bbb}}: {{abc}}
+        </div>
+    </div>
+    <script src="../vue.js"></script>
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                name: ["小站", "罗志祥", "成龙"],
+                list: ["姚明", "刘翔", "李娜", "女排", "男足"],
+                person: {
+                    name: '王大锤',
+                    money: 20,
+                    car: '巨力'
+                }
+            },
+            methods: {}
+        });
+    </script>
+</body>
+
+</html>
