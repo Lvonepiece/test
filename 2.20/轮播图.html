@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        img {
+            width: 500px;
+            height: 500px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <button @click="start">开始播放</button>
+        <button @click="stop">结束播放</button>
+        <img v-bind:src="msg[currentIndex]" alt="">
+    </div>
+    <script src="../vue.js"></script>
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                msg: ["http://e.hiphotos.baidu.com/zhidao/pic/item/95eef01f3a292df5e4e808e0be315c6034a8731f.jpg",
+                    "http://vsd-picture.cdn.bcebos.com/209d080de4b91226504b58c2c38f176aa6663c5b.jpg",
+                    "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1582393814931&di=1cd8185aced1bb1a91ec624d5ec59d64&imgtype=0&src=http%3A%2F%2Fcdn.duitang.com%2Fuploads%2Fitem%2F201208%2F09%2F20120809210822_VKzYZ.thumb.224_0.jpeg",
+                    "http://n.sinaimg.cn/front/231/w640h391/20181015/xnuc-hmhswim9368796.jpg",
+                    "http://pics2.baidu.com/feed/c83d70cf3bc79f3da3277cfb0b83c517708b29db.png?token=fd6d43dd6a4a784165c06895b9db3866&s=E4E0BB474A338FD4566904A90300E086"
+                ],
+                currentIndex: -1
+            },
+            methods: {
+                start() {
+                    let fuc = () => {
+                        if (this.currentIndex < this.msg.length - 1) {
+                            this.currentIndex++
+                        } else {
+                            this.currentIndex = 0
+                        }
+                    }
+                    this.flsg = setInterval(fuc, 1000)
+                },
+                stop() {
+                    clearInterval(this.flsg)
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>
