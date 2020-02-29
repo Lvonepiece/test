@@ -44,8 +44,8 @@
                         <th>操作</th>
                     </thead>
                     <tbody>
-                        <tr v-for="item in list">
-                            <td>1</td>
+                        <tr v-for="(item,index) in list">
+                            <td>{{index+1}}</td>
                             <td>{{ item.name }}</td>
                             <td>{{item.date}}</td>
                             <td>

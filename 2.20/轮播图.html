@@ -31,21 +31,25 @@
                     "http://n.sinaimg.cn/front/231/w640h391/20181015/xnuc-hmhswim9368796.jpg",
                     "http://pics2.baidu.com/feed/c83d70cf3bc79f3da3277cfb0b83c517708b29db.png?token=fd6d43dd6a4a784165c06895b9db3866&s=E4E0BB474A338FD4566904A90300E086"
                 ],
-                currentIndex: -1
+                currentIndex: 0
             },
             methods: {
                 start() {
-                    let fuc = () => {
-                        if (this.currentIndex < this.msg.length - 1) {
-                            this.currentIndex++
-                        } else {
-                            this.currentIndex = 0
+                    if (!this.flsg) {
+                        let fuc = () => {
+                            if (this.currentIndex < this.msg.length - 1) {
+                                this.currentIndex++
+                            } else {
+                                this.currentIndex = 0
+                            }
                         }
+                        this.flsg = setInterval(fuc, 100)
                     }
-                    this.flsg = setInterval(fuc, 1000)
+
                 },
                 stop() {
-                    clearInterval(this.flsg)
+                    clearInterval(this.flsg),
+                        this.flsg = null
                 }
             }
         });
